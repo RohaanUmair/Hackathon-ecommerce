@@ -1,7 +1,3 @@
-import Image from "next/image";
-import { TfiAlarmClock } from "react-icons/tfi";
-import { VscGraph } from "react-icons/vsc";
-import { IoIosArrowForward } from "react-icons/io";
 import LearnMoreCard from "../LearnMoreCard";
 
 

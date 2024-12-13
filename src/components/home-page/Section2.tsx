@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ImgCard from "./ImgCard";
 
 function Section2() {

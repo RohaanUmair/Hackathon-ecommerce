@@ -21,9 +21,9 @@ function LearnMoreCard({ imgSrc }: { imgSrc: string }) {
                     <p>New</p>
                 </div>
 
-                <h4 className="text-[#252B42] text-xl font-normal">Loudest à la Madison #1 <br /> (L'integral)</h4>
+                <h4 className="text-[#252B42] text-xl font-normal">Loudest à la Madison #1 <br /> (L integral)</h4>
 
-                <p className="text-sm font-normal text-[#737373]">We focus on ergonomics and meeting <br />you where you work. It's only a <br />keystroke away.</p>
+                <p className="text-sm font-normal text-[#737373]">We focus on ergonomics and meeting <br />you where you work. Its only a <br />keystroke away.</p>
 
                 <div className="flex justify-between">
                     <div className="flex gap-[5px]">

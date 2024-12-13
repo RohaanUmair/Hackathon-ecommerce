@@ -88,9 +88,9 @@ function Header() {
                     <div className="w-[361px] flex justify-between">
                         <ul className="w-[361px] flex justify-between font-[500] text-[14px]">
                             {
-                                navs.map((nav) => {
+                                navs.map((nav, index) => {
                                     return (
-                                        <Link href={nav.link}>
+                                        <Link key={index} href={nav.link}>
                                             <li>{nav.name}</li>
                                         </Link>
                                     )
