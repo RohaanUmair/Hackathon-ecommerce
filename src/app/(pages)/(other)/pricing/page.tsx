@@ -3,7 +3,7 @@ import Section1 from "@/components/other/pricing/Section1";
 import Section2 from "@/components/other/pricing/Section2";
 import Section3 from "@/components/other/pricing/Section3";
 import Section4 from "@/components/other/pricing/Section4";
-import Section5 from "@/components/other/pricing/Section5";
+import Section5 from "@/components/other/Section5";
 
 function PricingPage() {
     return (
