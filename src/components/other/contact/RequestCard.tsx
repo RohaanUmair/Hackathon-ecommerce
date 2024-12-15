@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RequestCard({ icon, theme }: { icon: any, theme: 'light' | 'dark' }) {
+function RequestCard({ icon, theme }: { icon: React.ReactNode, theme: 'light' | 'dark' }) {
     
     const isLightTheme: boolean = theme === 'light';
 
