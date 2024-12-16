@@ -3,21 +3,21 @@ import DisplayCard from "../displayCard";
 function Section4() {
     return (
         <div className="scale-95 flex flex-col gap-12">
-            <div className="flex gap-7 justify-center">
+            <div className="flex gap-7 justify-center    max-md:flex-col max-md:items-center">
                 <DisplayCard imgSrc="/shop-sec41.jpg" />
                 <DisplayCard imgSrc="/shop-sec42.jpg" />
                 <DisplayCard imgSrc="/shop-sec43.jpg" />
                 <DisplayCard imgSrc="/shop-sec44.jpg" />
             </div>
 
-            <div className="flex gap-7 justify-center"> 
+            <div className="flex gap-7 justify-center max-md:hidden"> 
                 <DisplayCard imgSrc="/shop-sec45.jpg" />
                 <DisplayCard imgSrc="/shop-sec46.jpg" />
                 <DisplayCard imgSrc="/shop-sec47.jpg" />
                 <DisplayCard imgSrc="/shop-sec48.jpg" />
             </div>
 
-            <div className="flex gap-7 justify-center"> 
+            <div className="flex gap-7 justify-center max-md:hidden"> 
                 <DisplayCard imgSrc="/shop-sec49.jpg" />
                 <DisplayCard imgSrc="/shop-sec410.jpg" />
                 <DisplayCard imgSrc="/shop-sec411.jpg" />

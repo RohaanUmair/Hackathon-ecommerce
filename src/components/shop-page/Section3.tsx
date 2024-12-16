@@ -6,8 +6,8 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function Section3() {
     return (
-        <div className="h-[98px]">
-            <div className="w-[1050px] flex justify-between mx-auto">
+        <div className="h-[98px]    max-md:h-[216px]">
+            <div className="w-[1050px] flex justify-between mx-auto     max-md:w-screen max-md:flex-col max-md:items-center max-md:justify-evenly max-md:h-full">
 
                 <div className="flex items-center">
                     <h6 className="font-bold text-sm text-[#737373]">Showing all 12 results</h6>

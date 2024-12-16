@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function DisplayCard({ imgSrc }: { imgSrc: string }) {
     return (
-        <div className="w-[240px] h-[615px] flex flex-col">
+        <div className="w-[240px] max-md:w-[348px] h-[615px] flex flex-col">
             <Image alt="card-img" src={imgSrc} width={240} height={427} layout="omit" className="w-full h-[427px] object-cover" />
 
             <div className="h-[188px] w-full flex flex-col justify-evenly items-center">

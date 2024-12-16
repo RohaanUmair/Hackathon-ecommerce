@@ -8,7 +8,7 @@ function Section2() {
             
             <div className='flex flex-col items-center gap-[10px]'>
                 <h2 className='text-[#252B42] text-[40px] font-bold'>Pricing</h2>
-                <p className='text-[#737373] text-sm font-bold text-center'>Problems trying to resolve the conflict between <br />the two major realms of Classical physics: Newtonian mechanics </p>
+                <p className='text-[#737373] text-sm font-bold text-center      max-md:w-[262px]'>Problems trying to resolve the conflict between <br />the two major realms of Classical physics: Newtonian mechanics </p>
             </div>
 
 

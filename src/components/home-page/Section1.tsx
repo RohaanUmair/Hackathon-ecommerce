@@ -2,21 +2,21 @@ import Image from "next/image";
 
 function Section1() {
     return (
-        <div className="relative w-full h-screen pt-[136px] overflow-hidden flex justify-center items-center">
+        <div className="relative w-full h-screen md:pt-[136px] max-md:pt-[78px] overflow-hidden flex justify-center items-center">
             <Image
                 src="/bg.jpg"
                 alt="bg"
-                className="absolute -z-10 inset-0 w-full h-full object-cover object-top !top-10"
+                className="absolute -z-10 inset-0 w-full h-full object-cover object-top md:!top-10"
                 layout="fill"
             />
 
 
-            <div className="w-[1044px] h-[427px] flex items-center">
+            <div className="md:w-[1044px] mmd:h-[427px] flex items-center">
                 
-                <div className="w-[599px] h-[331px] flex flex-col justify-between text-white">
+                <div className="md:w-[599px] max-md:text-center h-[331px] max-md:h-[381px] flex flex-col justify-between max-md:items-center max-md:px-[73px] text-white">
                     <h5 className="text-base font-[700]">SUMMER 2020</h5>
 
-                    <h1 className="font-[700] text-[58px]">NEW COLLECTION</h1>
+                    <h1 className="font-[700] text-[58px] max-md:text-[40px]">NEW COLLECTION</h1>
 
                     <h4 className="font-[400] text-xl">We know how large objects will act, <br /> 
                     but things on a small scale.</h4>

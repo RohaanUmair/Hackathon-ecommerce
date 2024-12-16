@@ -7,12 +7,12 @@ import Section5 from "@/components/other/Section5";
 
 function PricingPage() {
     return (
-        <div className="pt-[91px] bg-[#fafafa]">
+        <div className="pt-[91px] bg-[#fafafa]      max-md:pt-[78px]">
             <Section1 />
             <Section2 />
             <Section3 />
             <div className="flex flex-col py-20">
-                <h2 className="text-xl font-normal text-center">Trusted By Over 4000 Big Companies</h2>
+                <h2 className="text-xl font-normal text-center">Trusted By Over 4000<br className="md:hidden" /> Big Companies</h2>
                 <CompaniesName />
             </div>
             <Section4 />

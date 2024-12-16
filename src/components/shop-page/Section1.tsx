@@ -3,9 +3,13 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function Section1() {
     return (
-        <div className="pt-[136px]">
+        <div className="pt-[136px] max-md:pt-[78px]">
+
             <div className="bg-[#fafafa]">
-                <div className="h-[92px] w-[1042px] mx-auto flex justify-between px-6 items-center">
+
+                <div className="h-[92px] w-[1042px] mx-auto flex justify-between px-6 items-center max-md:h-[202px] max-md:w-screen max-md:flex-col max-md:justify-evenly">
+
+
                     <h2 className="text-[#252B42] font-bold text-2xl">Shop</h2>
 
                     <div className="flex items-center gap-3">
@@ -13,8 +17,12 @@ function Section1() {
                         <IoIosArrowForward className="text-[#bdbdbd] text-base" />
                         <h6 className="text-[#BDBDBD] text-sm font-bold">Shop</h6>
                     </div>
+
+
                 </div>
+
             </div>
+
         </div>
     )
 }
