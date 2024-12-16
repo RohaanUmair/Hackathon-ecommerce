@@ -5,9 +5,9 @@ import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
-import { IoCartOutline, IoSearch } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 import { BsCart2 } from "react-icons/bs";
-import { IoIosHeartEmpty, IoIosSearch } from "react-icons/io";
+import { IoIosHeartEmpty } from "react-icons/io";
 import Link from "next/link";
 import { BiMenuAltRight } from "react-icons/bi";
 

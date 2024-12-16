@@ -41,24 +41,24 @@ function Header() {
         }
     ];
 
-    const mobileNavs = [
-        {
-            name: 'Home',
-            link: '/'
-        },
-        {
-            name: 'Product',
-            link: '/product'
-        },
-        {
-            name: 'Pricing',
-            link: '/pricing'
-        },
-        {
-            name: 'Contact',
-            link: '/contact'
-        }
-    ];
+    // const mobileNavs = [
+    //     {
+    //         name: 'Home',
+    //         link: '/'
+    //     },
+    //     {
+    //         name: 'Product',
+    //         link: '/product'
+    //     },
+    //     {
+    //         name: 'Pricing',
+    //         link: '/pricing'
+    //     },
+    //     {
+    //         name: 'Contact',
+    //         link: '/contact'
+    //     }
+    // ];
 
     return (
         <>

@@ -5,7 +5,7 @@ function Section3() {
         <div className="h-[348px] py-20 relative flex flex-col gap-4 text-center items-center">
             <Image alt="arrow" src='/arrow.png' width={64} height={15} className="absolute top-0" />
 
-            <h6 className="text-[#252B42] text-base font-bold">WE Can't WAIT TO MEET YOU</h6>
+            <h6 className="text-[#252B42] text-base font-bold">WE Can t WAIT TO MEET YOU</h6>
 
             <h2 className="text-[58px] text-[#252B42] font-bold">Lets Talk</h2>
 
