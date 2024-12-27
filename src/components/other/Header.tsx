@@ -30,7 +30,7 @@ function Header() {
 
     return (
         <>
-            <header className="h-[91px] flex pl-[195px] pr-[143px] items-center justify-between absolute z-20 w-full max-md:hidden">
+            <header className="h-[91px] flex pl-[195px] pr-[143px] items-center justify-between fixed z-[1000] bg-white w-full max-md:hidden">
                 <h1 className="text-[#252B42] text-2xl font-bold">Bandage</h1>
 
                 <div className="flex w-[815px] justify-between">
