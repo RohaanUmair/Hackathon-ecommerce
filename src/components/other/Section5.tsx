@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 function Section5() {
     return (
         <div className='h-[582px] flex flex-col justify-center bg-white'>
-            <div className='h-[282px] flex flex-col justify-between items-center'>
+            <div className='h-[282px] flex flex-col justify-between items-center        max-md:h-full max-md:gap-[30px] max-md:justify-center max-md:px-10 max-md:text-center'>
 
                 
                 <h2 className='text-[40px] text-[#252B42] font-bold'>Start your 14 days free trial</h2>

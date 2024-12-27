@@ -2,7 +2,7 @@ import Image from "next/image"
 
 function ProductsCard({ imgSrc }: {imgSrc: string}) {
     return (
-        <div className="w-[239px] h-[442px] bg-white">
+        <div className="w-[239px] h-[442px] bg-white        max-md:w-[90%]">
             <Image src={imgSrc} layout="omit" width={239} height={280} className="w-full h-[280px] object-cover" alt="img" />
 
             <div className="h-[162px] flex flex-col gap-[10px] pl-[25px] justify-evenly pt-[25px] pb-[35px]">

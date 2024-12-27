@@ -12,11 +12,11 @@ import { IoEye } from "react-icons/io5";
 
 function Section1() {
     return (
-        <div className="h-[826px] pt-[136px] bg-[#fafafa]">
+        <div className="h-[826px] pt-[136px] bg-[#fafafa]       max-md:pt-[78px] max-md:h-[1050px]">
 
 
             <div className="h-[92px] bg-[#fafafa] flex justify-center">
-                <div className="w-[1042px] px-6 flex items-center gap-[15px] font-bold text-sm">
+                <div className="w-[1042px] px-6 flex items-center gap-[15px] font-bold text-sm      max-md:w-full max-md:px-0 max-md:justify-center">
                     <h5>Home</h5>
                     <IoIosArrowForward className="text-base text-[#bdbdbd]" />
                     <h5 className="text-[#bdbdbd]">Shop</h5>
@@ -24,11 +24,11 @@ function Section1() {
             </div>
 
 
-            <div className="w-[1042px] h-[598px] mx-auto flex justify-between">
+            <div className="w-[1042px] h-[598px] mx-auto flex justify-between       max-md:flex-col max-md:w-full max-md:h-[990px] max-md:justify-normal">
 
 
-                <div className="w-[506px] h-[546px] flex flex-col gap-5 relative">
-                    <div className="h-[450px] w-[506px]">
+                <div className="w-[506px] h-[546px] flex flex-col gap-5 relative        max-md:w-[348px] max-md:h-[394px] max-md:mx-auto">
+                    <div className="h-[450px] w-[506px]         max-md:w-[348px] max-md:h-[277px]">
                         <Image src="/single-product/shop-single-product.jpg" className="h-full w-full" alt="img" layout="omit" height={450} width={506} />
                     </div>
 
@@ -37,7 +37,7 @@ function Section1() {
                         <Image src={'/single-product/shop-single-product.jpg'} alt="img" className="w-[100px] h-[75px] object-cover" layout="omit" width={100} height={75} />
                     </div>
 
-                    <div className="text-white flex justify-between w-full text-[60px] px-5 absolute top-1/2 -translate-y-1/2">
+                    <div className="text-white flex justify-between w-full text-[60px] px-5 absolute top-1/2 -translate-y-1/2       max-md:text-5xl max-md:-translate-y-16 max-md:px-2 ">
                         <IoIosArrowBack />
                         <IoIosArrowForward />
                     </div>
@@ -45,7 +45,7 @@ function Section1() {
 
 
 
-                <div className="w-[510px] h-[450px] flex flex-col">
+                <div className="w-[510px] h-[450px] flex flex-col       max-md:w-[348px] max-md:h-[471px] max-md:mx-auto">
                     <h4 className="font-semibold text-xl text-[#252B42] mt-[11px]">Floating Phone</h4>
 
                     <div className="flex text-xl text-[#F3CD03] gap-[5px] items-center mt-3">

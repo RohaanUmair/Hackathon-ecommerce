@@ -5,12 +5,12 @@ function Section3() {
     return (
         <div className="w-full bg-[#fafafa]">
 
-            <div className="py-12 w-[1086px] mx-auto">
-                <h3 className="font-bold text-2xl text-[#252B42]">BESTSELLER PRODUCTS</h3>
+            <div className="py-12 w-[1086px] mx-auto        max-md:w-full ">
+                <h3 className="font-bold text-2xl text-[#252B42]        max-md:text-center">BESTSELLER PRODUCTS</h3>
 
                 <div className="bg-[#ECECEC] h-px w-full my-6"></div>
 
-                <div className="flex justify-between flex-wrap gap-y-6">
+                <div className="flex justify-between flex-wrap gap-y-6      max-md:flex-col max-md:items-center">
                     <ProductsCard imgSrc="/single-product/product-card1.jpg" />
                     <ProductsCard imgSrc="/single-product/product-card2.jpg" />
                     <ProductsCard imgSrc="/single-product/product-card3.jpg" />

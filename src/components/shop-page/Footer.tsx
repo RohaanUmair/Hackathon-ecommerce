@@ -6,11 +6,11 @@ import FooterSection from "../FooterSection";
 
 function Footer() {
     return (
-        <div className="h-[488px]">
+        <div className="h-[488px] w-full        max-md:h-full">
 
 
-            <div className=" h-[142px] flex items-center px-[195px] justify-between">
-                <div className="w-full h-full border-b border-[#e6e6e6] flex items-center justify-between">
+            <div className=" h-[142px] flex items-center px-[195px] justify-between         max-md:h-full max-md:px-[46px] max-md:items-start">
+                <div className="w-full h-full border-b border-[#e6e6e6] flex items-center justify-between       max-md:flex-col max-md:items-start max-md:py-10 max-md:gap-5">
                     <h1 className="font-bold text-2xl">Bandage</h1>
 
                     <div className="flex text-[#23A6F0] text-[23px] gap-5">
@@ -21,8 +21,8 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="h-[272px] flex justify-between items-center w-full">
-                <div className="h-[170px] flex px-[195px] justify-between">
+            <div className="h-[272px] flex justify-between items-center w-full      max-md:h-full">
+                <div className="h-[170px] w-full flex px-[195px] justify-between        max-md:py-10 max-md:px-0 max-md:h-full max-md:flex-col max-md:pl-[46px] max-md:gap-[30px]">
                     <FooterSection
                         heading="Company Info"
                         li1="About Us"
@@ -68,7 +68,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="h-[74px] bg-[#FAFAFA] flex items-center px-[195px]">
+            <div className="h-[74px] bg-[#FAFAFA] flex items-center px-[195px]      max-md:px-0 max-md:mx-auto max-md:w-full max-md:justify-center">
                 <h6 className="text-[#737373] font-bold text-sm">Made With Love By Finland All Right Reserved</h6>
             </div>
 

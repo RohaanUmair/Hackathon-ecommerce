@@ -7,7 +7,7 @@ import Section5 from "@/components/other/about/Section5";
 
 function AboutPage() {
     return (
-        <div className="pt-[91px]">
+        <div className="pt-[91px]       max-md:pt-[78px]">
             <Section1 />
             <Section2 />
             <Section3 />

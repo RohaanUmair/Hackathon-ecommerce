@@ -122,7 +122,7 @@ function Header() {
             </header>
 
 
-            <header className="flex flex-col items-center md:hidden fixed w-screen">
+            <header className="flex flex-col items-center md:hidden fixed w-screen bg-white z-50">
 
 
                 <div className="flex justify-between w-full py-[23px] px-[35px] text-[#252B42]">

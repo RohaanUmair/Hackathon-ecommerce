@@ -6,7 +6,7 @@ import React from 'react'
 
 function TeamPage() {
     return (
-        <div className='pt-[91px]'>
+        <div className='pt-[91px]       max-md:pt-[78px]'>
             <Section1 />
             <Section2 />
             <Section3 />
