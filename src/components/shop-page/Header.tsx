@@ -1,3 +1,4 @@
+"use client";
 import { FiPhone } from "react-icons/fi";
 import { PiEnvelopeLight } from "react-icons/pi";
 import { FaInstagram } from "react-icons/fa";
@@ -10,6 +11,7 @@ import { BsCart2 } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
 import Link from "next/link";
 import { BiMenuAltRight } from "react-icons/bi";
+import { useState } from "react";
 
 
 
@@ -40,6 +42,8 @@ function Header() {
             link: '/pages'
         }
     ]
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <>
@@ -128,10 +132,41 @@ function Header() {
                 <div className="flex justify-between w-full py-[23px] px-[35px] text-[#252B42]">
                     <h3 className="text-2xl font-bold">Bandage</h3>
 
-                    <div className="flex text-2xl items-center">
+                    <div className="flex text-2xl items-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <BiMenuAltRight />
                     </div>
                 </div>
+
+
+                {
+                    isMenuOpen &&
+                    <ul className="bg-white w-full py-8 text-[#737373] text-[20px] font-normal flex flex-col gap-[30px] items-center">
+                        <Link href={'/'}>
+                            <li>Home</li>
+                        </Link>
+
+                        <Link href={'/shop'}>
+                            <li>Shop</li>
+                        </Link>
+
+                        <Link href={'/pricing'}>
+                            <li>Pricing</li>
+                        </Link>
+
+                        <Link href={'/about'}>
+                            <li>About</li>
+                        </Link>
+
+                        <Link href={'/contact'}>
+                            <li>Contact</li>
+                        </Link>
+
+                        <Link href={'/team'}>
+                            <li>Team</li>
+                        </Link>
+                    </ul>
+                }
+
 
 
             </header>
