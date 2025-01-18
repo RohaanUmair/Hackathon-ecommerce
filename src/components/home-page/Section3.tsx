@@ -62,7 +62,7 @@ function Section3() {
                 {
                     data2.map((item: any) => {
                         return (
-                            <DisplayCard title={item.title} imgSrc={`https://${item.productImage.asset._ref}`} price={item.price} discountPercentage={item.discountPercentage} />
+                            <DisplayCard title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
                         )
                     })
                 }
