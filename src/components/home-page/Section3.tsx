@@ -1,7 +1,39 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useState } from 'react'
 import DisplayCard from '../displayCard'
+import { client } from '@/sanity/lib/client';
+// import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
+import imageUrlBuilder from '@sanity/image-url';
+
 
 function Section3() {
+    const builder = imageUrlBuilder(client);
+
+    function urlFor(source: any) {
+        return builder.image(source);
+    }
+
+    const [data, setData] = useState<any>([]);
+    const [data2, setData2] = useState<any>([]);
+
+
+    useEffect(() => {
+        client
+            .fetch('*[_type == "product"]{title, price, discountPercentage, productImage}')
+            .then((data) => {
+                setData(data.slice(0, 4));
+                setData2(data.slice(4, 8));
+            })
+            .catch((err) => console.error(err));
+    }, []);
+
+    if (data.length == 0) {
+        return <h1>loading</h1>
+    }
+
+    console.log(data)
+
+
     return (
         <div className='h-[1652px] max-md:h-[5510px] flex flex-col justify-evenly'>
 
@@ -13,17 +45,27 @@ function Section3() {
             </div>
 
             <div className='flex gap-7 justify-center max-md:flex-col max-md:items-center max-md:gap-[30px]'>
-                <DisplayCard imgSrc='/card1.jpg' />
-                <DisplayCard imgSrc='/card2.jpg' />
-                <DisplayCard imgSrc='/card3.jpg' />
-                <DisplayCard imgSrc='/card4.jpg' />
+                {
+                    data.map((item: any) => {
+                        return (
+                            <DisplayCard title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
+                        )
+                    })
+                }
             </div>
 
             <div className='flex gap-7 justify-center md:mt-20 max-md:flex-col max-md:items-center max-md:gap-[30px]'>
-                <DisplayCard imgSrc='/card5.jpg' />
+                {/* <DisplayCard imgSrc='/card5.jpg' />
                 <DisplayCard imgSrc='/card6.jpg' />
                 <DisplayCard imgSrc='/card7.jpg' />
-                <DisplayCard imgSrc='/card8.jpg' />
+                <DisplayCard imgSrc='/card8.jpg' /> */}
+                {
+                    data2.map((item: any) => {
+                        return (
+                            <DisplayCard title={item.title} imgSrc={`https://${item.productImage.asset._ref}`} price={item.price} discountPercentage={item.discountPercentage} />
+                        )
+                    })
+                }
             </div>
 
 

@@ -4,6 +4,7 @@ import Section3 from "@/components/home-page/Section3";
 import Section4 from "@/components/home-page/Section4";
 import Section5 from "@/components/home-page/Section5";
 import Section6 from "@/components/home-page/Section6";
+import { useEffect } from "react";
 
 export default function Home() {
   return (
