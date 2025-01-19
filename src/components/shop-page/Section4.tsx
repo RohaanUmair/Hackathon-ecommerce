@@ -1,27 +1,67 @@
+'use client';
+import { client } from "@/sanity/lib/client";
 import DisplayCard from "../displayCard";
+import imageUrlBuilder from '@sanity/image-url';
+import { useEffect, useState } from "react";
+import SearchBar from "./SearchBar";
+
 
 function Section4() {
+    const builder = imageUrlBuilder(client);
+
+    function urlFor(source: any) {
+        return builder.image(source);
+    }
+
+    const [data, setData] = useState<any>([]);
+    const [filteredData, setFilteredData] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+
+
+    useEffect(() => {
+        client
+            .fetch('*[_type == "product"]{title, price, discountPercentage, productImage}')
+            .then((data) => {
+                setData(data);
+                setFilteredData(data);
+            })
+            .catch((err) => console.error(err));
+    }, []);
+
+    useEffect(() => {
+        const lowercasedTerm = searchTerm.toLowerCase();
+        const filtered = data.filter((item) =>
+            item.title.toLowerCase().includes(lowercasedTerm)
+        );
+        setFilteredData(filtered);
+    }, [searchTerm, data]);
+
+    if (data.length == 0) {
+        return <h1>loading</h1>
+    }
+
+
     return (
         <div className="scale-95 flex flex-col gap-12">
-            <div className="flex gap-7 justify-center    max-md:flex-col max-md:items-center">
-                <DisplayCard imgSrc="/shop-sec41.jpg" />
-                <DisplayCard imgSrc="/shop-sec42.jpg" />
-                <DisplayCard imgSrc="/shop-sec43.jpg" />
-                <DisplayCard imgSrc="/shop-sec44.jpg" />
+            <div className="p-4 flex justify-center">
+                <SearchBar data={filteredData} setFilteredData={setFilteredData} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </div>
 
-            <div className="flex gap-7 justify-center max-md:hidden"> 
-                <DisplayCard imgSrc="/shop-sec45.jpg" />
-                <DisplayCard imgSrc="/shop-sec46.jpg" />
-                <DisplayCard imgSrc="/shop-sec47.jpg" />
-                <DisplayCard imgSrc="/shop-sec48.jpg" />
-            </div>
 
-            <div className="flex gap-7 justify-center max-md:hidden"> 
-                <DisplayCard imgSrc="/shop-sec49.jpg" />
-                <DisplayCard imgSrc="/shop-sec410.jpg" />
-                <DisplayCard imgSrc="/shop-sec411.jpg" />
-                <DisplayCard imgSrc="/shop-sec412.jpg" />
+            <div className="grid grid-cols-4 gap-7 p-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 mx-auto">
+                {
+                    filteredData.map((item: any, index: number) => {
+                        return (
+                            <DisplayCard
+                                key={index}
+                                title={item.title}
+                                imgSrc={urlFor(item.productImage).url()}
+                                price={item.price}
+                                discountPercentage={item.discountPercentage}
+                            />
+                        );
+                    })
+                }
             </div>
 
             <ul className="flex border border-[#bdbdbd] w-fit rounded-md mx-auto">

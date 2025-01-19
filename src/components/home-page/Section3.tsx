@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import DisplayCard from '../displayCard'
 import { client } from '@/sanity/lib/client';
-// import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 import imageUrlBuilder from '@sanity/image-url';
 
 
@@ -46,9 +45,9 @@ function Section3() {
 
             <div className='flex gap-7 justify-center max-md:flex-col max-md:items-center max-md:gap-[30px]'>
                 {
-                    data.map((item: any) => {
+                    data.map((item: any, index: number) => {
                         return (
-                            <DisplayCard title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
+                            <DisplayCard key={index} title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
                         )
                     })
                 }
@@ -60,9 +59,9 @@ function Section3() {
                 <DisplayCard imgSrc='/card7.jpg' />
                 <DisplayCard imgSrc='/card8.jpg' /> */}
                 {
-                    data2.map((item: any) => {
+                    data2.map((item: any, index: number) => {
                         return (
-                            <DisplayCard title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
+                            <DisplayCard key={index} title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
                         )
                     })
                 }
