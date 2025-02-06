@@ -18,7 +18,7 @@ function Section3() {
 
     useEffect(() => {
         client
-            .fetch('*[_type == "product"]{title, price, discountPercentage, productImage}')
+            .fetch('*[_type == "product"]{title, price, discountPercentage, productImage, description}')
             .then((data) => {
                 setData(data.slice(0, 4));
                 setData2(data.slice(4, 8));
@@ -47,7 +47,7 @@ function Section3() {
                 {
                     data.map((item: any, index: number) => {
                         return (
-                            <DisplayCard key={index} title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
+                            <DisplayCard description={item.description} key={index} title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
                         )
                     })
                 }
@@ -61,7 +61,7 @@ function Section3() {
                 {
                     data2.map((item: any, index: number) => {
                         return (
-                            <DisplayCard key={index} title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
+                            <DisplayCard description={item.description} key={index} title={item.title} imgSrc={urlFor(item.productImage).url()} price={item.price} discountPercentage={item.discountPercentage} />
                         )
                     })
                 }

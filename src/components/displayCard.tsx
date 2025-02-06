@@ -1,9 +1,18 @@
+'use client';
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-function DisplayCard({ imgSrc, title, price, discountPercentage }: { imgSrc: string, title: string, price: number, discountPercentage: number }) {
+function DisplayCard({ imgSrc, title, price, description }: { imgSrc: string, title: string, price: number, discountPercentage: number, description: string }) {
+    const router = useRouter();
+    const slug = title.replace(/\s+/g, '').toLowerCase();
+
+    const handleClick = () => {
+        router.push(`/shop/${slug}?title=${encodeURIComponent(title)}&price=${price}&imgSrc=${encodeURIComponent(imgSrc)}&description=${encodeURIComponent(description)}`);
+        console.log('clicked')
+    };
 
     return (
-        <div className="w-[240px] max-md:w-[348px] h-[615px] flex flex-col">
+        <div className="w-[240px] max-md:w-[348px] h-[615px] flex flex-col cursor-pointer" onClick={handleClick}>
             <Image alt="card-img" src={imgSrc} width={240} height={427} layout="omit" className="w-full h-[427px] object-cover" />
 
             <div className="h-[188px] w-full flex flex-col justify-evenly items-center">

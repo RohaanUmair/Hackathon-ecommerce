@@ -1,5 +1,4 @@
 'use client';
-import { useState } from "react";
 
 function SearchBar({ data, setFilteredData, searchTerm, setSearchTerm }: any) {
 

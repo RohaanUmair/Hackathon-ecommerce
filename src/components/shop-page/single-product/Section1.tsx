@@ -10,7 +10,22 @@ import { IoEye } from "react-icons/io5";
 
 
 
-function Section1() {
+function Section1({ product }: { product: { title: string; price: string; imgSrc: string, description: string } }) {
+    const addToCart = () => {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+        const existingProductIndex = cart.findIndex((item: any) => item.title === product.title);
+        if (existingProductIndex !== -1) {
+            cart[existingProductIndex].quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Product added to cart!");
+        console.log(cart);
+    };
+
     return (
         <div className="h-[826px] pt-[136px] bg-[#fafafa]       max-md:pt-[78px] max-md:h-[1050px]">
 
@@ -29,12 +44,12 @@ function Section1() {
 
                 <div className="w-[506px] h-[546px] flex flex-col gap-5 relative        max-md:w-[348px] max-md:h-[394px] max-md:mx-auto">
                     <div className="h-[450px] w-[506px]         max-md:w-[348px] max-md:h-[277px]">
-                        <Image src="/single-product/shop-single-product.jpg" className="h-full w-full" alt="img" layout="omit" height={450} width={506} />
+                        <Image src={product.imgSrc} className="h-full w-full" alt="img" layout="omit" height={450} width={506} />
                     </div>
 
                     <div className="flex gap-5">
-                        <Image src={'/single-product/small-img.jpg'} alt="img" className="w-[100px] h-[75px] object-cover" layout="omit" width={100} height={75} />
-                        <Image src={'/single-product/shop-single-product.jpg'} alt="img" className="w-[100px] h-[75px] object-cover" layout="omit" width={100} height={75} />
+                        <Image src={product.imgSrc} alt="img" className="w-[100px] h-[75px] object-cover" layout="omit" width={100} height={75} />
+                        <Image src={product.imgSrc} alt="img" className="w-[100px] h-[75px] object-cover" layout="omit" width={100} height={75} />
                     </div>
 
                     <div className="text-white flex justify-between w-full text-[60px] px-5 absolute top-1/2 -translate-y-1/2       max-md:text-5xl max-md:-translate-y-16 max-md:px-2 ">
@@ -46,7 +61,7 @@ function Section1() {
 
 
                 <div className="w-[510px] h-[450px] flex flex-col       max-md:w-[348px] max-md:h-[471px] max-md:mx-auto">
-                    <h4 className="font-semibold text-xl text-[#252B42] mt-[11px]">Floating Phone</h4>
+                    <h4 className="font-semibold text-xl text-[#252B42] mt-[11px]">{product.title}</h4>
 
                     <div className="flex text-xl text-[#F3CD03] gap-[5px] items-center mt-3">
                         <FaStar />
@@ -57,14 +72,11 @@ function Section1() {
                         <h6 className="text-[#737373] font-bold text-sm ml-2">10 Reviews</h6>
                     </div>
 
-                    <h5 className="text-[#252B42] text-2xl font-bold mt-5">$1,139.33</h5>
+                    <h5 className="text-[#252B42] text-2xl font-bold mt-5">${product.price}</h5>
 
                     <h6 className="text-[#737373] font-bold text-sm mt-[5px]">Availability  : <span className="text-[#23A6F0]">In Stock </span></h6>
 
-                    <p className="text-sm font-normal text-[#858585] mt-8">Met minim Mollie non desert Alamo est sit cliquey dolor
-                        do met sent. RELIT official consequent door ENIM RELIT Mollie.
-                        Excitation venial consequent sent nostrum met.
-                    </p>
+                    <p className="text-sm font-normal text-[#858585] mt-8">{product.description.slice(0, 200)}</p>
 
                     <div className="bg-[#BDBDBD] w-full h-px mt-7"></div>
 
@@ -82,7 +94,8 @@ function Section1() {
                             <FaRegHeart />
                         </div>
 
-                        <div className="w-10 h-10 rounded-full border border-[#E8E8E8] bg-white flex justify-center items-center text-[#252B42] text-[19px]">
+                        {/* CART BUTTON */}
+                        <div onClick={addToCart} className="w-10 h-10 rounded-full border border-[#E8E8E8] bg-white flex justify-center items-center text-[#252B42] text-[19px]">
                             <BsCart />
                         </div>
 

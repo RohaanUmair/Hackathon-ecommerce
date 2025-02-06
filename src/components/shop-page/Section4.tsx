@@ -20,7 +20,7 @@ function Section4() {
 
     useEffect(() => {
         client
-            .fetch('*[_type == "product"]{title, price, discountPercentage, productImage}')
+            .fetch('*[_type == "product"]{title, price, discountPercentage, productImage, description}')
             .then((data) => {
                 setData(data);
                 setFilteredData(data);
@@ -58,6 +58,7 @@ function Section4() {
                                 imgSrc={urlFor(item.productImage).url()}
                                 price={item.price}
                                 discountPercentage={item.discountPercentage}
+                                description={item.description}
                             />
                         );
                     })
